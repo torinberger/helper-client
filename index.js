@@ -5,6 +5,9 @@ module.exports = (ip, port, name, interval) => {
   return {
     online: false,
     deploy() {
+      if (!interval) {
+        interval = 15000
+      }
       let time = new Date()
       this.online = false
       axios
